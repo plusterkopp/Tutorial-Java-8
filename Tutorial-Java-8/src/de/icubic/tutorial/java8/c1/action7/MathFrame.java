@@ -1,6 +1,5 @@
 package de.icubic.tutorial.java8.c1.action7;
 
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -8,34 +7,35 @@ import javax.swing.*;
 
 public class MathFrame extends JFrame {
 
-	private final JTextField textFieldX = new JTextField(10);
-	private final JTextField textFieldY = new JTextField(10);
-	private final JButton buttonPlus = new JButton("Plus");
-	private final JButton buttonMinus = new JButton("Minus");
-	private final JTextField textFieldResult = new JTextField(10);
+	private final JTextField textFieldX = new JTextField( 10);
+	private final JTextField textFieldY = new JTextField( 10);
+	private final JButton buttonPlus = new JButton( "Plus");
+	private final JButton buttonMinus = new JButton( "Minus");
+	private final JTextField textFieldResult = new JTextField( 10);
 
 	public MathFrame() {
-		setLayout(new FlowLayout());
-		this.add(textFieldX);
-		this.add(textFieldY);
-		this.add(buttonPlus);
-		this.add(buttonMinus);
-		this.add(textFieldResult);
+		setLayout( new FlowLayout());
+		this.add( textFieldX);
+		this.add( textFieldY);
+		this.add( buttonPlus);
+		this.add( buttonMinus);
+		this.add( textFieldResult);
 		registerListeners();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
 		pack();
-		setVisible(true);
+		setVisible( true);
 	}
 
 	private void registerListeners() {
-		this.buttonPlus.addActionListener(new ActionListener() {
+		buttonPlus.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed( ActionEvent e) {
 				MathFrame.this.onPlus();
 			}
 		});
-		this.buttonMinus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		buttonMinus.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed( ActionEvent e) {
 				MathFrame.this.onMinus();
 			}
 		});
@@ -43,25 +43,23 @@ public class MathFrame extends JFrame {
 
 	private void onPlus() {
 		try {
-			int x = Integer.parseInt(textFieldX.getText());
-			int y = Integer.parseInt(textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText());
+			int y = Integer.parseInt( textFieldY.getText());
 			int result = x + y;
-			textFieldResult.setText(String.valueOf(result));
-		}
-		catch(NumberFormatException e) {
-			textFieldResult.setText("Illegal input");
+			textFieldResult.setText( String.valueOf( result));
+		} catch ( NumberFormatException e) {
+			textFieldResult.setText( "Illegal input");
 		}
 	}
 
 	private void onMinus() {
 		try {
-			int x = Integer.parseInt(textFieldX.getText());
-			int y = Integer.parseInt(textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText());
+			int y = Integer.parseInt( textFieldY.getText());
 			int result = x - y;
-			textFieldResult.setText(String.valueOf(result));
-		}
-		catch(NumberFormatException e) {
-			textFieldResult.setText("Illegal input");
+			textFieldResult.setText( String.valueOf( result));
+		} catch ( NumberFormatException e) {
+			textFieldResult.setText( "Illegal input");
 		}
 	}
 

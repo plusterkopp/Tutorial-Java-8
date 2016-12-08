@@ -1,55 +1,53 @@
 package de.icubic.tutorial.java8.c1.action8_2;
 
+import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class MathFrame extends JFrame {
-	
-	private final JTextField textFieldX = new JTextField(10);
-	private final JTextField textFieldY = new JTextField(10);
-	private final JButton buttonSum = new JButton("Sum");
-	private final JButton buttonDiff = new JButton("Diff");
-	private final JTextField textFieldResult = new JTextField(10);
-	
-	public MathFrame() {
-		this.setLayout(new FlowLayout());
-		this.add(this.textFieldX);
-		this.add(this.textFieldY);
-		this.add(this.buttonSum);
-		this.add(this.buttonDiff);
-		this.add(this.textFieldResult);
-		
-		this.buttonSum.addActionListener((ActionEvent e) -> this.onSum());
-		this.buttonDiff.addActionListener((ActionEvent e) -> this.onDiff());
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.pack();
-		this.setVisible(true);
+	private final JTextField textFieldX = new JTextField( 10);
+	private final JTextField textFieldY = new JTextField( 10);
+	private final JButton buttonSum = new JButton( "Sum");
+	private final JButton buttonDiff = new JButton( "Diff");
+	private final JTextField textFieldResult = new JTextField( 10);
+
+	public MathFrame() {
+		setLayout( new FlowLayout());
+		this.add( textFieldX);
+		this.add( textFieldY);
+		this.add( buttonSum);
+		this.add( buttonDiff);
+		this.add( textFieldResult);
+
+		buttonSum.addActionListener( ( ActionEvent e) -> onSum());
+		buttonDiff.addActionListener( ( ActionEvent e) -> onDiff());
+
+		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+		pack();
+		setVisible( true);
 	}
-	
+
 	public void onSum() {
 		try {
-			int x = Integer.parseInt(this.textFieldX.getText());
-			int y = Integer.parseInt(this.textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText());
+			int y = Integer.parseInt( textFieldY.getText());
 			int result = x + y;
-			this.textFieldResult.setText(String.valueOf(result));
-		}
-		catch(NumberFormatException e) {
-			this.textFieldResult.setText("Bad input");
+			textFieldResult.setText( String.valueOf( result));
+		} catch ( NumberFormatException e) {
+			textFieldResult.setText( "Bad input");
 		}
 	}
-	
+
 	public void onDiff() {
 		try {
-			int x = Integer.parseInt(this.textFieldX.getText());
-			int y = Integer.parseInt(this.textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText());
+			int y = Integer.parseInt( textFieldY.getText());
 			int result = x - y;
-			this.textFieldResult.setText(String.valueOf(result));
-		}
-		catch(NumberFormatException e) {
-			this.textFieldResult.setText("Bad input");
+			textFieldResult.setText( String.valueOf( result));
+		} catch ( NumberFormatException e) {
+			textFieldResult.setText( "Bad input");
 		}
 	}
 
