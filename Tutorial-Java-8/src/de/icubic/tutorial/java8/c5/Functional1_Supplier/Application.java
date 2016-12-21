@@ -1,10 +1,9 @@
 package de.icubic.tutorial.java8.c5.Functional1_Supplier;
 
-import java.util.function.IntSupplier;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Application {
-	public static void main(String[] args) {
+	public static void main( String[] args ) {
 		{
 			Supplier<Integer> s = new Supplier<Integer>() {
 				public Integer get() {
@@ -12,12 +11,12 @@ public class Application {
 				}
 			};
 			int v = s.get();
-			System.out.println(v);
+			System.out.println( v );
 		}
 		{
 			Supplier<Integer> s = () -> 42;
 			int v = s.get();
-			System.out.println(v);
+			System.out.println( v );
 		}
 
 		{
@@ -27,23 +26,25 @@ public class Application {
 				}
 			};
 			int v = s.getAsInt();
-			System.out.println(v);
+			System.out.println( v );
 		}
 		{
 			IntSupplier s = () -> 42;
 			int v = s.getAsInt();
-			System.out.println(v);
+			System.out.println( v );
 		}
 
 		{
 			IntSupplier s = new IntSupplier() {
 				int n = 0;
+
 				public int getAsInt() {
-					return n == 10 ? 0 : ++n;
+					return n == 10 ? 0 : ++ n;
 				}
 			};
-			for (int v = s.getAsInt(); v != 0; v = s.getAsInt()) 
-				System.out.print(v + " ");
+			for ( int v = s.getAsInt(); v != 0; v = s.getAsInt() ) {
+				System.out.print( v + " " );
+			}
 			System.out.println();
 		}
 	}

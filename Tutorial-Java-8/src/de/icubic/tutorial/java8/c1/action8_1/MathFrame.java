@@ -1,29 +1,28 @@
 package de.icubic.tutorial.java8.c1.action8_1;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.*;
-
 public class MathFrame extends JFrame {
 
-	private final JTextField textFieldX = new JTextField( 10);
-	private final JTextField textFieldY = new JTextField( 10);
-	private final JButton buttonPlus = new JButton( "Plus");
-	private final JButton buttonMinus = new JButton( "Minus");
-	private final JTextField textFieldResult = new JTextField( 10);
+	private final JTextField textFieldX = new JTextField( 10 );
+	private final JTextField textFieldY = new JTextField( 10 );
+	private final JButton buttonPlus = new JButton( "Plus" );
+	private final JButton buttonMinus = new JButton( "Minus" );
+	private final JTextField textFieldResult = new JTextField( 10 );
 
 	public MathFrame() {
-		setLayout( new FlowLayout());
-		this.add( textFieldX);
-		this.add( textFieldY);
-		this.add( buttonPlus);
-		this.add( buttonMinus);
-		this.add( textFieldResult);
+		setLayout( new FlowLayout() );
+		this.add( textFieldX );
+		this.add( textFieldY );
+		this.add( buttonPlus );
+		this.add( buttonMinus );
+		this.add( textFieldResult );
 		registerListeners();
-		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		pack();
-		setVisible( true);
+		setVisible( true );
 	}
 
 	// private void registerListeners() {
@@ -39,12 +38,12 @@ public class MathFrame extends JFrame {
 	// });
 	// }
 	private void registerListeners() {
-		buttonPlus.addActionListener( ( ActionEvent e) -> {
+		buttonPlus.addActionListener( ( ActionEvent e ) -> {
 			onPlus();
-		});
-		buttonMinus.addActionListener( ( ActionEvent e) -> {
+		} );
+		buttonMinus.addActionListener( ( ActionEvent e ) -> {
 			onMinus();
-		});
+		} );
 	}
 	// private void registerListeners() {
 	// this.buttonPlus.addActionListener((ActionEvent e) -> this.onPlus());
@@ -65,23 +64,23 @@ public class MathFrame extends JFrame {
 		// l.actionPerformed(new ActionEvent(this, 0, ""));
 
 		try {
-			int x = Integer.parseInt( textFieldX.getText());
-			int y = Integer.parseInt( textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText() );
+			int y = Integer.parseInt( textFieldY.getText() );
 			int result = x + y;
-			textFieldResult.setText( String.valueOf( result));
-		} catch ( NumberFormatException e) {
-			textFieldResult.setText( "Illegal input");
+			textFieldResult.setText( String.valueOf( result ) );
+		} catch ( NumberFormatException e ) {
+			textFieldResult.setText( "Illegal input" );
 		}
 	}
 
 	private void onMinus() {
 		try {
-			int x = Integer.parseInt( textFieldX.getText());
-			int y = Integer.parseInt( textFieldY.getText());
+			int x = Integer.parseInt( textFieldX.getText() );
+			int y = Integer.parseInt( textFieldY.getText() );
 			int result = x - y;
-			textFieldResult.setText( String.valueOf( result));
-		} catch ( NumberFormatException e) {
-			textFieldResult.setText( "Illegal input");
+			textFieldResult.setText( String.valueOf( result ) );
+		} catch ( NumberFormatException e ) {
+			textFieldResult.setText( "Illegal input" );
 		}
 	}
 
