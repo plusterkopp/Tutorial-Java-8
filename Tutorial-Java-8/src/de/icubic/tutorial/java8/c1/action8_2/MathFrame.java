@@ -1,8 +1,9 @@
 package de.icubic.tutorial.java8.c1.action8_2;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.*;
 
 public class MathFrame extends JFrame {
 
@@ -14,11 +15,11 @@ public class MathFrame extends JFrame {
 
 	public MathFrame() {
 		setLayout( new FlowLayout() );
-		this.add( textFieldX );
-		this.add( textFieldY );
-		this.add( buttonSum );
-		this.add( buttonDiff );
-		this.add( textFieldResult );
+		add( textFieldX );
+		add( textFieldY );
+		add( buttonSum );
+		add( buttonDiff );
+		add( textFieldResult );
 
 		buttonSum.addActionListener( ( ActionEvent e ) -> onSum() );
 		buttonDiff.addActionListener( ( ActionEvent e ) -> onDiff() );

@@ -18,8 +18,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return this.getClass()
-				.getSimpleName() + " [" + isbn + ", " + title + ", " + author + ", " + price + "]";
+		return getClass().getSimpleName() + " [" + isbn + ", " + title + ", " + author + ", " + price + "]";
 	}
 
 	static {
